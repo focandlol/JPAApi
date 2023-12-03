@@ -5,6 +5,7 @@ import jpabook.jpaApi.domain.item.Item;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import jakarta.persistence.EntityManager;
 import java.util.List;
 
 @Repository
