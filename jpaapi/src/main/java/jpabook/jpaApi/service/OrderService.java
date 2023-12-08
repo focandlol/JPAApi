@@ -3,7 +3,7 @@ package jpabook.jpaApi.service;
 import jpabook.jpaApi.domain.*;
 import jpabook.jpaApi.domain.item.Item;
 import jpabook.jpaApi.repository.ItemRepository;
-import jpabook.jpaApi.repository.MemberRepository;
+import jpabook.jpaApi.repository.MemberRepositoryOld;
 import jpabook.jpaApi.repository.OrderRepository;
 import jpabook.jpaApi.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final MemberRepository memberRepository;
+    private final MemberRepositoryOld memberRepository;
     private final ItemRepository itemRepository;
 
     /**
@@ -61,6 +61,6 @@ public class OrderService {
 
     //검색
     public List<Order> findOrders(OrderSearch orderSearch) {
-        return orderRepository.findAllByString(orderSearch);
+        return orderRepository.findAll(orderSearch);
     }
 }
